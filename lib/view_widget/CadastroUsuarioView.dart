@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hora_do_remedio/view_widget/CadastroUsuarioView.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({Key? key}) : super(key: key);
+class CadastroUsuarioView extends StatefulWidget {
+  const CadastroUsuarioView({Key? key}) : super(key: key);
 
   @override
-  _LoginViewState createState() => _LoginViewState();
+  _CadastroUsuarioViewState createState() => _CadastroUsuarioViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _CadastroUsuarioViewState extends State<CadastroUsuarioView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Cadastro de Usúario"),
+      ),
       body: Container(
           decoration: BoxDecoration(color: Color(0xff075E54)),
           padding: EdgeInsets.all(16),
@@ -43,6 +45,21 @@ class _LoginViewState extends State<LoginView> {
                               borderRadius: BorderRadius.circular(32))),
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 8),
+                    child: TextField(
+                      autofocus: true,
+                      keyboardType: TextInputType.emailAddress,
+                      style: TextStyle(fontSize: 20),
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                          hintText: "E-mail",
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(32))),
+                    ),
+                  ),
                   TextField(
                     keyboardType: TextInputType.text,
                     style: TextStyle(fontSize: 20),
@@ -57,23 +74,23 @@ class _LoginViewState extends State<LoginView> {
                   Padding(
                     padding: EdgeInsets.only(top: 16, bottom: 10),
                     child: RaisedButton(
-                      child: Text(
-                        "Entrar",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                      color: Colors.green,
-                      padding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32)
-                      ),
-                      onPressed: () {}),
+                        child: Text(
+                          "Entrar",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        color: Colors.green,
+                        padding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32)
+                        ),
+                        onPressed: () {}),
                   ),
                   Center(
                     child: GestureDetector(
                       child: Text(
                           "Não tem conta? Cadastre-se!",
                           style: TextStyle(
-                            color: Colors.white
+                              color: Colors.white
                           )
                       ),
                       onTap: (){
