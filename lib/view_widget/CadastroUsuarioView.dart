@@ -20,7 +20,7 @@ class _CadastroUsuarioViewState extends State<CadastroUsuarioView> {
           child: Center(
             child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch ,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(bottom: 32),
@@ -34,11 +34,25 @@ class _CadastroUsuarioViewState extends State<CadastroUsuarioView> {
                     padding: EdgeInsets.only(bottom: 8),
                     child: TextField(
                       autofocus: true,
-                      keyboardType: TextInputType.emailAddress,
+                      keyboardType: TextInputType.text,
                       style: TextStyle(fontSize: 20),
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                          hintText: "E-mail",
+                          hintText: "Nome",
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(32))),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 8),
+                    child: TextField(
+                      keyboardType: TextInputType.text,
+                      style: TextStyle(fontSize: 20),
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                          hintText: "Endereço",
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
@@ -81,33 +95,25 @@ class _CadastroUsuarioViewState extends State<CadastroUsuarioView> {
                         color: Colors.green,
                         padding: EdgeInsets.fromLTRB(32, 16, 32, 16),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(32)
-                        ),
+                            borderRadius: BorderRadius.circular(32)),
                         onPressed: () {}),
                   ),
                   Center(
                     child: GestureDetector(
-                      child: Text(
-                          "Não tem conta? Cadastre-se!",
-                          style: TextStyle(
-                              color: Colors.white
-                          )
-                      ),
-                      onTap: (){
+                      child: Text("Não tem conta? Cadastre-se!",
+                          style: TextStyle(color: Colors.white)),
+                      onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => CadastroUsuarioView()
-                            )
-                        );
+                                builder: (context) => CadastroUsuarioView()));
                       },
                     ),
                   ),
                 ],
               ),
             ),
-          )
-      ),
+          )),
     );
   }
 }
